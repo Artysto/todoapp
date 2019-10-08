@@ -1,0 +1,28 @@
+<tbody>
+{%for task in all_tasks%}
+<tr class="task" value="{{task.pk}}">
+{{task.task_name}} + {{task.pk}}
+</tr>
+
+{% endfor %}
+</tbody>
+<div id="targetComment"></div>
+
+<script>
+$(".task").click(function(){
+  var pk = $(this).attr('value')
+  callComment(pk)
+});
+function callComment(pk){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("targetComment").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/" + pk + "/view-comment", true);
+  xhttp.send();
+}
+</script>
+
+

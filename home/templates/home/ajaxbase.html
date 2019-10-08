@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:home="http://www.w3.org/1999/xhtml">
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    {% block title %} <title>Title</title> {% endblock %}
+</head>
+<div class="container">
+
+    <div class="item">
+      One of three columns
+    </div>
+    <div class="item">
+      One of three columns
+    </div>
+    <div class="item">
+      One of three columns
+    </div>
+
+</div>
+<div id="demo"></div>
+
+<script>
+$(document).ready(function(){
+  makeCall()
+});
+function makeCall(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/todo", true);
+  xhttp.send();
+}
+</script>
+

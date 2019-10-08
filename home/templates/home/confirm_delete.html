@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data" id="comment-form" action="{{ form.pk }}" >
+{% csrf_token %}
+<h4>Are you sure about this?</h4>
+{{form.as_p}}
+<button type="submit" value="{{ form.instance.task.pk}}" id="comment-btn">Submit</button>
+</form>
+{{form.errors}}

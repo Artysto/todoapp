@@ -1,0 +1,5 @@
+<form method="post" id="todo-form" data-id="{{post.pk}}" action='{% url 'home:add-todo' %}'>
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" id='todo-submit' class="btn btn-success" >Create</button>
+</form>

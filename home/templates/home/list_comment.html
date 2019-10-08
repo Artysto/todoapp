@@ -1,0 +1,11 @@
+<table>
+<tbody>
+{%for comment in all_comments%}
+<tr class="comment" value="{{comment.pk}}">
+    {{comment.content}} <a href="{{comment.file.url}}"> File</a>
+</tr>
+
+{% endfor %}
+</tbody>
+
+</table>

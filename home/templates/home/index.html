@@ -1,0 +1,34 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+        <div class="container">
+                <div class="container-fluid">
+                    <div id="todo">
+                
+                    </div>
+                </div>
+
+
+                <div class="container-fluid">
+                    <div id="task">
+                    
+                    </div>
+                </div>
+                
+
+                <div class="container-fluid">
+                    <div id="comment">
+
+                    </div>
+                </div>
+                        
+        </div>
+
+{% endblock %}
+
+{% block javascript %}
+{% load staticfiles %}
+<script src= "{% static 'home/js_functions.js' %}"  ></script>
+{% endblock %}
+
+

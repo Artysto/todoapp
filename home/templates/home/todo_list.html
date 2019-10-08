@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                    
+                    <tr>
+                        Todo &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="add-todo" href='{% url 'home:add-todo' %}'><small><span class='glyphicon glyphicon-plus' aria-hidden='true' ></span>New Todo</small></a>
+                    </tr>
+                    <hr style="border-width: 3px;">
+                    
+                        
+                {% for todo in todo_list %}
+                        <tr>
+                                <div class="todos" value="{{todo.pk}}"> 
+                                    {{ todo.title }} 
+                                </div>
+                                
+                                <div class='todo_update' style='display: inline;' value='{% url 'home:update-todo' todo.pk %}'>
+                                    <button type="submit"  class="btn btn-success btn-xs">                       
+                                        <span class='glyphicon glyphicon-pencil' aria-hidden='true' ></span>
+                                    </button>
+                                </div>
+
+                                <div class='todo_delete' style='display: inline;' value='{% url 'home:delete-todo' todo.pk %}'>
+                                    <button type="submit"  class="btn btn-danger btn-xs">                       
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                    
+                                </div>
+                                
+                        </tr>
+                    <hr>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+
+

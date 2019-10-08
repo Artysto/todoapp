@@ -1,0 +1,5 @@
+<form id="comment-form" method="post" enctype="multipart/form-data" action='' type='post'>
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" id="comment-submit" class="btn btn-success" >Submit</button>
+</form>
